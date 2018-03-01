@@ -21,8 +21,11 @@ const JumboHeading = styled.h1`
   font-size: 36px;
   font-weight: 800;
   text-transform: uppercase;
-  padding: 10px 0;
   letter-spacing: 0.1em;
+
+  color: ${cssVariables.COLOR_WHITE};
+
+  padding: 10px 0;
 `;
 
 const CentrePiece = styled.div`
@@ -33,7 +36,6 @@ const CentrePiece = styled.div`
   justify-content: center;
   align-items: center;
 
-  color: ${cssVariables.COLOR_WHITE};
   background: ${cssVariables.COLOR_BLACK};
 
   padding: ${cssVariables.PADDING_DOUBLE};
@@ -64,6 +66,10 @@ const CentrePiece = styled.div`
     border: 2px solid ${cssVariables.COLOR_BLACK};
     border-radius: 3px;
     clip-path: polygon(0 0, 65% 0%, 65% 25%, 100% 25%, 100% 100%, 0 100%);
+  }
+
+  p {
+    color: ${cssVariables.COLOR_WHITE};
   }
 `;
 
