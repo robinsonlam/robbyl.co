@@ -9,3 +9,5 @@ export const PADDING_DOUBLE =  '40px';
 // Colours
 
 export const COLOR_PINK = '#FF4974';
+export const COLOR_BLACK= '#333333';
+export const COLOR_WHITE= '#f3f3f3';

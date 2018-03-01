@@ -1,11 +1,14 @@
-import React from 'react'
-import { Router, Link } from 'react-static'
-//
-import Routes from 'react-static-routes'
-import styled, { injectGlobal } from 'styled-components'
+import React from 'react';
+import { Router } from 'react-static';
+
+import Routes from 'react-static-routes';
+import styled, { injectGlobal } from 'styled-components';
+import { GlobalNavigation } from './components';
+import * as cssVariables from './styling/variables';
 
 injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Amiko');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -52,35 +55,26 @@ table {
 }
 
 body {
-  font-family: 'Amiko', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
+  font-family: 'Lato', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
   'Lucida Grande', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   margin: 0;
   padding: 0;
+  text-rendering: optimizeLegibility;
+  background: ${cssVariables.COLOR_WHITE};
 }
-`;
 
-const GlobalNavigation = styled.nav`
-  display: flex;
-  position: fixed;
-  top: 0;
-  right: 0;
-`;
-
-const StyledLink = styled(Link)`
-  padding: 1rem;
-  display: inline-block;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Amiko', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
+  'Lucida Grande', sans-serif;
+}
 `;
 
 export default () => (
   <Router>
     <div>
-      <GlobalNavigation>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/about">About</StyledLink>
-        <StyledLink to="/blog">Blog</StyledLink>
-      </GlobalNavigation>
+      <GlobalNavigation />
       <div className="content">
         <Routes />
       </div>

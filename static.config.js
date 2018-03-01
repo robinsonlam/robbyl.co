@@ -2,11 +2,11 @@ import axios from 'axios'
 
 export default {
   getSiteData: async ({dev}) => ({
-    title: `My Awesome Title ${dev}`,
+    title: `robbyl.co | Robinson Lam ${dev}`,
     lastBuilt: Date.now()
   }),
   withSiteData: () => ({
-    title: 'React Static',
+    title: 'robbyl.co | Robinson Lam',
   }),
   getRoutes: async () => {
     const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -16,11 +16,11 @@ export default {
         component: 'src/containers/Home',
       },
       {
-        path: '/about',
+        path: '/work',
         component: 'src/containers/About',
       },
       {
-        path: '/blog',
+        path: '/contact',
         component: 'src/containers/Blog',
         getData: () => ({
           posts,
